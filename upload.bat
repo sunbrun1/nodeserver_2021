@@ -1,5 +1,3 @@
-git add -all
-
-git commit -m "simple web server running at localhost:8000"
-
+git add --all
+git commit -m "make MyServer.js"
 git push -u origin master
