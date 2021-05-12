@@ -1,3 +1,3 @@
 git add --all
-git commit -m "error not found nickname page -> add handling for nick name page"
+git commit -m "add people page reading people.json"
 git push -u origin master
