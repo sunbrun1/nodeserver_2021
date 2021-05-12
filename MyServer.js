@@ -8,7 +8,15 @@ function start(route, handle) {
     function onRequset(req, res){
         console.log('Request receive');
         pathname = new url.URL(req.url,baseUrl).pathname;
-        route(pathname, handle, res);
+        let postData = '';
+        req.setEncoding('utf-8');
+        req.addListener('data', function(chunk){
+            postData += chunk;
+            console.log('chunk:' + postData);
+        });
+        req.addListener('end', function(){
+            route(pathname, handle, res);
+        });
     }
     server = http.createServer(onRequset);
     server.listen(port,hostname);

@@ -3,7 +3,7 @@ const myHandler = require('./MyHandler')
 function route(pathname, handle, res) {
     console.log('Routing request for' + pathname);
     if(typeof handle[pathname] === 'function'){
-        handle[pathname](res);
+        handle[pathname](res,postData);
     }
     else{
         pathFile = '.' + pathname + '.html' // ex) ./page.html
