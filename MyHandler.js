@@ -3,6 +3,7 @@ function start(res){
     body += '<body><div> Hello, start!@ <br> I am in the cloud class. </div><br>';
     body += '<div> <a href="\hello"> hello 페이지 </a> </div>';
     body += '<div> <a href="\wait"> 5초 대기 페이지 </a> </div>';
+    body += '<div> <a href="\randomWait"> 무작위 대기 페이지 </a> </div>';
     body += '</body>'
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(body);
@@ -23,10 +24,19 @@ function wait(res){
         res.write(sBody);
         res.end();
     }, 5000);
-    
+}
 
+function randomWait(res){
+    let waitTime = Math.round(Math.random()*10000)
+    setTimeout(function(){
+        let sBody = 'Thank you for waitng for' + waitTime + 'ms!';
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.write(sBody);
+        res.end();
+    }, 5000);
 }
 
 exports.start = start;
 exports.hello = hello;
 exports.wait = wait;
+exports.randomWait = randomWait;
