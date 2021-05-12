@@ -1,4 +1,5 @@
 const fs = require('fs');
+const os = require('os');
 
 function start(res){
     let body = '<head> <meta charset="UTF-8"/></head>'
@@ -7,6 +8,8 @@ function start(res){
     body += '<div> <a href="/wait"> 5초 대기 페이지 </a> </div>';
     body += '<div> <a href="/randomWait"> 무작위 대기 페이지 </a> </div>';
     body += '<div> <a href="/firstHtml"> 파일 read 첫번째 페이지 </a> </div>';
+    body += '<div> <a href="/page"> 핸들러없이 자동매핑 </a> </div>';
+    body += '<div> <a href="/serverInfo"> 서버정보 </a> </div>';
     body += '</body>'
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(body);
@@ -50,9 +53,17 @@ function firstHtml(res){
     htmlFile(res, './firstHtml.html');
 }
 
+function serverInfo(res){
+   info = JSON.stringify(os.cpus());
+   res.writeHead(200, {'Content-Type': 'text/html'});
+   res.write(body);
+   res.end();
+}
+
 exports.start = start;
 exports.hello = hello;
 exports.wait = wait;
 exports.randomWait = randomWait;
 exports.firstHtml = firstHtml;
 exports.htmlFile = htmlFile;
+exports.serverInfo = serverInfo;
