@@ -1,9 +1,9 @@
 function start(res){
     let body = '<head> <meta charset="UTF-8"/></head>'
     body += '<body><div> Hello, start!@ <br> I am in the cloud class. </div><br>';
-    body += '<div> <a href="\hello"> hello 페이지 </a> </div>';
-    body += '<div> <a href="\wait"> 5초 대기 페이지 </a> </div>';
-    body += '<div> <a href="\randomWait"> 무작위 대기 페이지 </a> </div>';
+    body += '<div> <a href="/hello"> hello 페이지 </a> </div>';
+    body += '<div> <a href="/wait"> 5초 대기 페이지 </a> </div>';
+    body += '<div> <a href="/randomWait"> 무작위 대기 페이지 </a> </div>';
     body += '</body>'
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(body);
@@ -33,7 +33,7 @@ function randomWait(res){
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.write(sBody);
         res.end();
-    }, 5000);
+    }, waitTime);
 }
 
 exports.start = start;

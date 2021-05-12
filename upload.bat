@@ -1,3 +1,3 @@
 git add --all
-git commit -m "add randomWait page +"
+git commit -m "MyHandler href error"
 git push -u origin master
