@@ -1,3 +1,3 @@
 git add --all
-git commit -m "make MyRouter.js"
+git commit -m "add wait page +"
 git push -u origin master
