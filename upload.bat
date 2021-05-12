@@ -1,3 +1,3 @@
 git add --all
-git commit -m "add people page reading people.json"
+git commit -m "error not Found Postdata "
 git push -u origin master
