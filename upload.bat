@@ -1,3 +1,3 @@
 git add --all
-git commit -m "error serverInfo page res.write(info)"
+git commit -m "add form input page"
 git push -u origin master
