@@ -1,3 +1,3 @@
 git add --all
-git commit -m "add serverInfo page"
+git commit -m "error serverInfo page res.write(info)"
 git push -u origin master

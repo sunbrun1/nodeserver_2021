@@ -56,7 +56,7 @@ function firstHtml(res){
 function serverInfo(res){
    info = JSON.stringify(os.cpus());
    res.writeHead(200, {'Content-Type': 'text/html'});
-   res.write(body);
+   res.write(info);
    res.end();
 }
 
